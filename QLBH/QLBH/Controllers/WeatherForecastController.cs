@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using QLBH.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,8 @@ namespace QLBH.Controllers
         {
             _logger = logger;
         }
-
+        private readonly ApplicationDbContext _context;
+        
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
